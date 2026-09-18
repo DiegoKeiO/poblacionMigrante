@@ -11,8 +11,10 @@ pip install pandas --break-system-packages
 """
 
 import pandas as pd
+import os
 
-RUTA = "./"  # ajusta si tus CSV están en otra carpeta
+CARPETA_SCRIPT = os.path.dirname(os.path.abspath(__file__))
+RUTA = os.path.join(CARPETA_SCRIPT, "..", "data") + os.sep # ajusta si tus CSV están en otra carpeta
 
 # ---------------------------------------------------------------------------
 # Clave primaria para unir módulos a nivel de persona
@@ -202,7 +204,7 @@ print("\nDistribución final de la variable objetivo (dataset de entrenamiento):
 print(df["condicion_laboral"].value_counts(dropna=False))
 
 # ---------------------------------------------------------------------------
-# PASO 7: Armonizar nivel educativo Venezuela vs. Perú a "años de escolaridad"
+# PASO 6: Armonizar nivel educativo Venezuela vs. Perú a "años de escolaridad"
 # ---------------------------------------------------------------------------
 # Aproximación estándar en literatura de economía laboral (similar al criterio
 # de bases comparativas internacionales tipo Barro-Lee): cada categoría se
@@ -279,7 +281,31 @@ print("\nDistribución de la brecha educativa (años):")
 print(df["brecha_educativa_anios"].describe())
 
 # ---------------------------------------------------------------------------
-# PASO 6: Guardar el dataset final
+# PASO 7: Agrupar ocupación y rama de actividad + flag de ocupación actual
 # ---------------------------------------------------------------------------
-df.to_csv("dataset_final_empleabilidad_migrantes.csv", index=False)
+# Reducimos cardinalidad: usamos el Gran Grupo (CNO-2015, 1er dígito) y la
+# División económica (CIIU, 2 primeros dígitos) en vez del código detallado,
+# para evitar categorías con 1-2 observaciones que el modelo memorizaría
+# en vez de generalizar.
+df["ocupacion_principal"] = df["ocupacion_principal"].astype(str).str.strip()
+df["ocupacion_grupo"] = df["ocupacion_principal"].str[0]
+df.loc[df["ocupacion_principal"] == "", "ocupacion_grupo"] = None
+
+df["rama_actividad"] = df["rama_actividad"].astype(str).str.strip()
+df["rama_division"] = df["rama_actividad"].str.zfill(4).str[:2]
+df.loc[df["rama_actividad"] == "", "rama_division"] = None
+
+print("\nCategorías agrupadas -- ocupación:", df["ocupacion_grupo"].nunique(),
+      " | rama:", df["rama_division"].nunique())
+
+# Flag de ocupación actual + imputación de antigüedad para Desempleados
+# (para ellos, "0 años/meses en ocupación actual" es correcto: no tienen una)
+df["tiene_ocupacion_actual"] = df["anios_en_ocupacion_actual"].notna().astype(int)
+df["anios_en_ocupacion_actual"] = df["anios_en_ocupacion_actual"].fillna(0)
+df["meses_en_ocupacion_actual"] = df["meses_en_ocupacion_actual"].fillna(0)
+
+# ---------------------------------------------------------------------------
+# PASO 8: Guardar el dataset final
+# ---------------------------------------------------------------------------
+df.to_csv(RUTA + "dataset_final_empleabilidad_migrantes.csv", index=False)
 print("\nGuardado como dataset_final_empleabilidad_migrantes.csv")
