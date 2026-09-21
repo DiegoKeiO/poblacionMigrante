@@ -283,10 +283,6 @@ print(df["brecha_educativa_anios"].describe())
 # ---------------------------------------------------------------------------
 # PASO 7: Agrupar ocupación y rama de actividad + flag de ocupación actual
 # ---------------------------------------------------------------------------
-# Reducimos cardinalidad: usamos el Gran Grupo (CNO-2015, 1er dígito) y la
-# División económica (CIIU, 2 primeros dígitos) en vez del código detallado,
-# para evitar categorías con 1-2 observaciones que el modelo memorizaría
-# en vez de generalizar.
 df["ocupacion_principal"] = df["ocupacion_principal"].astype(str).str.strip()
 df["ocupacion_grupo"] = df["ocupacion_principal"].str[0]
 df.loc[df["ocupacion_principal"] == "", "ocupacion_grupo"] = None
@@ -298,8 +294,6 @@ df.loc[df["rama_actividad"] == "", "rama_division"] = None
 print("\nCategorías agrupadas -- ocupación:", df["ocupacion_grupo"].nunique(),
       " | rama:", df["rama_division"].nunique())
 
-# Flag de ocupación actual + imputación de antigüedad para Desempleados
-# (para ellos, "0 años/meses en ocupación actual" es correcto: no tienen una)
 df["tiene_ocupacion_actual"] = df["anios_en_ocupacion_actual"].notna().astype(int)
 df["anios_en_ocupacion_actual"] = df["anios_en_ocupacion_actual"].fillna(0)
 df["meses_en_ocupacion_actual"] = df["meses_en_ocupacion_actual"].fillna(0)
