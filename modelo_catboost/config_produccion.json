@@ -1,0 +1,29 @@
+{
+  "cat_cols": [
+    "sexo",
+    "estado_civil",
+    "nacionalidad",
+    "nivel_educ_venezuela",
+    "nivel_educ_peru",
+    "obtuvo_titulo",
+    "homologo_titulo_peru",
+    "tiene_carrera_superior",
+    "tipo_permiso_migratorio"
+  ],
+  "num_cols": [
+    "edad",
+    "anios_escolaridad_venezuela",
+    "anios_escolaridad_peru",
+    "brecha_educativa_anios",
+    "tiempo_residencia_anios"
+  ],
+  "clases_etapa1": [
+    "Desempleado",
+    "Empleado"
+  ],
+  "clases_etapa2": [
+    "Empleado_Formal",
+    "Empleado_Informal"
+  ],
+  "peso_formal_etapa2": 1.4
+}
