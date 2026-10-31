@@ -1,0 +1,245 @@
+[
+  {
+    "id":"R1",
+    "area_id":"A1",
+    "area":"Regularización y documentos migratorios",
+    "activa_cuando":"permiso ∈ {6,7,8,9}",
+    "aplica_a":"Todas",
+    "variable_prioridad":"tipo_permiso_migratorio",
+    "texto":"Inicia el trámite de regularización migratoria en MIGRACIONES. Necesitarás: solicitud (declaración jurada), número y fecha del recibo de pago, copia de tu documento de identidad vigente, y copia de un recibo de servicio público de tu domicilio. Consultas: (01) 200 1000."
+  },
+  {
+    "id":"R2",
+    "area_id":"A1",
+    "area":"Regularización y documentos migratorios",
+    "activa_cuando":"⚠ sin condición definida (hoy no se activa)",
+    "aplica_a":"Todas",
+    "variable_prioridad":"tipo_permiso_migratorio",
+    "texto":"Si eres solicitante de refugio, tu carné y autorización de trabajo ya te permiten trabajar legalmente. Consulta en el MRE: (01) 204-3127 o solicitantesrefugio@rree.gob.pe."
+  },
+  {
+    "id":"R3",
+    "area_id":"A1",
+    "area":"Regularización y documentos migratorios",
+    "activa_cuando":"permiso = 2",
+    "aplica_a":"Todas",
+    "variable_prioridad":"tipo_permiso_migratorio",
+    "texto":"Tu Carné de Extranjería te habilita para firmar contratos laborales y es aceptado tanto en la Bolsa de Trabajo (Empleos Perú) como para tramitar tu RUC."
+  },
+  {
+    "id":"R4",
+    "area_id":"A1",
+    "area":"Regularización y documentos migratorios",
+    "activa_cuando":"permiso = 1",
+    "aplica_a":"Todas",
+    "variable_prioridad":"tipo_permiso_migratorio",
+    "texto":"Tu Permiso Temporal de Permanencia (CPP\/PTP) es un documento habilitante para trabajar, y es aceptado en la Bolsa de Trabajo, en Capacita-T, en SUNAFIL y para tramitar tu RUC."
+  },
+  {
+    "id":"R5",
+    "area_id":"A1",
+    "area":"Regularización y documentos migratorios",
+    "activa_cuando":"permiso = 3",
+    "aplica_a":"Todas",
+    "variable_prioridad":"tipo_permiso_migratorio",
+    "texto":"Con pasaporte y calidad migratoria temporal, solo la calidad 'temporal trabajador' te permite firmar contratos directamente; las demás calidades requieren un permiso especial. Confirma tu situación exacta en MIGRACIONES."
+  },
+  {
+    "id":"R6",
+    "area_id":"A4",
+    "area":"Orientación y búsqueda de empleo",
+    "activa_cuando":"siempre",
+    "aplica_a":"Todas",
+    "variable_prioridad":"",
+    "texto":"Recibe orientación gratuita y sin requisitos en el Servicio de Orientación para el Migrante (SOM): de forma presencial en cualquiera de los 45 Centros de Empleo a nivel nacional, por el 0800-16872, o por orientacionmigrante@trabajo.gob.pe."
+  },
+  {
+    "id":"R7",
+    "area_id":"A2",
+    "area":"Reconocimiento de estudios y títulos",
+    "activa_cuando":"obtuvo_titulo=1 ∧ homologo=2 ∧ (universitario en Perú ∨ en Venezuela)",
+    "aplica_a":"Todas",
+    "variable_prioridad":"obtuvo_titulo",
+    "texto":"Inicia el trámite de RECONOCIMIENTO de tu título universitario ante SUNEDU: se evalúa en máximo 30 días hábiles, cuesta S\/400, y puedes hacerlo de forma presencial o virtual. Necesitas el diploma original con acceso a base de datos verificable, o Apostilla de La Haya\/legalización, más el comprobante de pago."
+  },
+  {
+    "id":"R8",
+    "area_id":"A2",
+    "area":"Reconocimiento de estudios y títulos",
+    "activa_cuando":"obtuvo_titulo=1 ∧ homologo=2 ∧ técnico superior (y ninguno universitario)",
+    "aplica_a":"Todas",
+    "variable_prioridad":"obtuvo_titulo",
+    "texto":"Si tu título es de instituto (técnico), no corresponde reconocimiento sino REGISTRO ante el MINEDU: solicitud, título con apostilla o legalización, traducción si no está en castellano, declaración jurada y pago."
+  },
+  {
+    "id":"R9",
+    "area_id":"A2",
+    "area":"Reconocimiento de estudios y títulos",
+    "activa_cuando":"obtuvo_titulo=1 ∧ homologo=2 ∧ (universitario en Perú ∨ en Venezuela)",
+    "aplica_a":"Todas",
+    "variable_prioridad":"",
+    "texto":"Reconocimiento y revalidación son trámites distintos — no son lo mismo. Si tu título es de abogacía, corresponde revalidación directa en una universidad peruana autorizada."
+  },
+  {
+    "id":"R10",
+    "area_id":"A2",
+    "area":"Reconocimiento de estudios y títulos",
+    "activa_cuando":"obtuvo_titulo=1 ∧ homologo=2 ∧ (universitario en Perú ∨ en Venezuela)",
+    "aplica_a":"Todas",
+    "variable_prioridad":"",
+    "texto":"Si tu profesión es regulada (medicina, enfermería, etc.), consulta antes con el colegio profesional correspondiente — es quien decide si exige revalidación adicional al reconocimiento de SUNEDU."
+  },
+  {
+    "id":"R11",
+    "area_id":"A2",
+    "area":"Reconocimiento de estudios y títulos",
+    "activa_cuando":"obtuvo_titulo=1 ∧ homologo=2",
+    "aplica_a":"Todas",
+    "variable_prioridad":"homologo_titulo_peru",
+    "texto":"La revalidación u homologación de tu título se realiza en universidades peruanas autorizadas por SUNEDU — cada una fija sus propios requisitos, costos y plazos."
+  },
+  {
+    "id":"R12",
+    "area_id":"A2",
+    "area":"Reconocimiento de estudios y títulos",
+    "activa_cuando":"obtuvo_titulo=1 ∧ homologo=2 ∧ (universitario en Perú ∨ en Venezuela)",
+    "aplica_a":"Todas",
+    "variable_prioridad":"homologo_titulo_peru",
+    "texto":"Una vez reconocido tu título, solicita la constancia de inscripción y verifica tu registro en línea. Ten en cuenta que el reconocimiento habilita docencia universitaria e investigación, pero no el ejercicio profesional (eso depende del colegio profesional)."
+  },
+  {
+    "id":"R13",
+    "area_id":"A4",
+    "area":"Orientación y búsqueda de empleo",
+    "activa_cuando":"obtuvo_titulo=1 ∧ homologo=2 ∨ clase ∈ {Desempleado, Informal}",
+    "aplica_a":"Todas",
+    "variable_prioridad":"",
+    "texto":"Completa tu perfil en la Bolsa de Trabajo de Empleos Perú y mejora tu CV con el Servicio de Asesoría para la Búsqueda de Empleo (ABE), disponible en tu Centro de Empleo más cercano."
+  },
+  {
+    "id":"R14",
+    "area_id":"A2",
+    "area":"Reconocimiento de estudios y títulos",
+    "activa_cuando":"obtuvo_titulo=1 ∧ homologo=2 ∧ (universitario en Perú ∨ en Venezuela)",
+    "aplica_a":"Todas",
+    "variable_prioridad":"homologo_titulo_peru",
+    "texto":"Para consultas sobre tu trámite de reconocimiento, escribe a consultasreconocimiento@sunedu.gob.pe o consultasgradosytitulos@sunedu.gob.pe."
+  },
+  {
+    "id":"R15",
+    "area_id":"A2",
+    "area":"Reconocimiento de estudios y títulos",
+    "activa_cuando":"obtuvo_titulo=2 ∧ (estudios superiores en Perú ∨ en Venezuela)",
+    "aplica_a":"Todas",
+    "variable_prioridad":"obtuvo_titulo",
+    "texto":"Si tienes estudios superiores pero no obtuviste el título: gestiona la obtención del diploma con la institución donde estudiaste (sin él no puedes iniciar el reconocimiento), o considera completar tus estudios en una universidad o instituto licenciado en Perú — consulta en tuni.pe o el portal Mi Carrera."
+  },
+  {
+    "id":"R16",
+    "area_id":"A3",
+    "area":"Formación y certificación",
+    "activa_cuando":"obtuvo_titulo=2 ∧ (estudios superiores en Perú ∨ en Venezuela)",
+    "aplica_a":"Todas",
+    "variable_prioridad":"",
+    "texto":"Certifica gratuitamente lo que ya sabes hacer: Capacita-T ofrece más de 50 cursos con certificación gratuita en 12 rutas de aprendizaje (análisis de datos, habilidades digitales, gestión de negocios, entre otras)."
+  },
+  {
+    "id":"R17",
+    "area_id":"A3",
+    "area":"Formación y certificación",
+    "activa_cuando":"sin estudios superiores en Perú ni en Venezuela (si no entra en las ramas anteriores)",
+    "aplica_a":"Todas",
+    "variable_prioridad":"",
+    "texto":"Explora rutas de formación accesibles según tu nivel actual: CETPRO (ciclo auxiliar sin requisito previo, ciclo técnico con primaria completa), institutos tecnológicos (secundaria completa + examen de admisión), o universidad pública gratuita (secundaria completa + admisión)."
+  },
+  {
+    "id":"R18",
+    "area_id":"A2",
+    "area":"Reconocimiento de estudios y títulos",
+    "activa_cuando":"universitario en Venezuela ∧ sin estudios superiores en Perú",
+    "aplica_a":"Todas",
+    "variable_prioridad":"",
+    "texto":"Si estudiaste primaria o secundaria en Venezuela y no tiene equivalencia reconocida en Perú, convalídala o revalídala ante el MINEDU — Venezuela está cubierta por el Convenio Andrés Bello. Necesitarás certificados legalizados o apostillados y traducción si corresponde; hay vía virtual disponible."
+  },
+  {
+    "id":"R20",
+    "area_id":"A2",
+    "area":"Reconocimiento de estudios y títulos",
+    "activa_cuando":"universitario en Venezuela ∧ sin estudios superiores en Perú",
+    "aplica_a":"Todas",
+    "variable_prioridad":"",
+    "texto":"Con un nivel educativo alto en Venezuela pero sin reconocer en Perú, prioriza la ruta de reconocimiento de título (ver recomendaciones de SUNEDU) — es la palanca más directa para acceder a empleo formal acorde a tu formación."
+  },
+  {
+    "id":"R21",
+    "area_id":"A4",
+    "area":"Orientación y búsqueda de empleo",
+    "activa_cuando":"universitario en Perú (si no se cumple la condición de R18\/R20)",
+    "aplica_a":"Todas",
+    "variable_prioridad":"",
+    "texto":"Con tu nivel educativo ya reconocido en Perú, el siguiente paso es enfocarte en la búsqueda activa de empleo acorde a tu formación."
+  },
+  {
+    "id":"R22",
+    "area_id":"A5",
+    "area":"Derechos laborales, formalización y emprendimiento",
+    "activa_cuando":"clase = Informal",
+    "aplica_a":"Empleado_Informal",
+    "variable_prioridad":"",
+    "texto":"La formalización laboral mejora directamente el nivel de ingresos: entre la población migrante venezolana en Perú, quienes trabajan en dependencia formal ganan en promedio S\/993, mientras que los empleadores formalizados llegan a S\/2,553."
+  },
+  {
+    "id":"R23",
+    "area_id":"A4",
+    "area":"Orientación y búsqueda de empleo",
+    "activa_cuando":"clase = Desempleado",
+    "aplica_a":"Desempleado",
+    "variable_prioridad":"",
+    "texto":"Regístrate en la Bolsa de Trabajo de Empleos Perú — requiere ser mayor de edad, tener CE o CPP, y estar habilitado para trabajar."
+  },
+  {
+    "id":"R24",
+    "area_id":"A5",
+    "area":"Derechos laborales, formalización y emprendimiento",
+    "activa_cuando":"clase = Informal",
+    "aplica_a":"Empleado_Informal",
+    "variable_prioridad":"",
+    "texto":"Conoce tus derechos laborales y, si los necesitas, presenta consultas en SUNAFIL Responde o denuncias confidenciales (necesitarás el RUC de la empresa, su dirección, y boletas o contrato)."
+  },
+  {
+    "id":"R25",
+    "area_id":"A5",
+    "area":"Derechos laborales, formalización y emprendimiento",
+    "activa_cuando":"clase = Informal",
+    "aplica_a":"Empleado_Informal",
+    "variable_prioridad":"",
+    "texto":"Si trabajas de forma independiente, inscríbete en el RUC como persona natural (trámite presencial en un Centro de Servicios al Contribuyente o MAC): necesitas DNI, CE, CPP o pasaporte con calidad migratoria habilitante. Luego activa tu RUC y solicita tu Clave SOL."
+  },
+  {
+    "id":"R26",
+    "area_id":"A5",
+    "area":"Derechos laborales, formalización y emprendimiento",
+    "activa_cuando":"clase = Informal",
+    "aplica_a":"Empleado_Informal",
+    "variable_prioridad":"",
+    "texto":"Emite tus Recibos por Honorarios de forma electrónica (obligatorio desde 2017): necesitas RUC con rentas de cuarta categoría y tu Clave SOL."
+  },
+  {
+    "id":"R27",
+    "area_id":"A5",
+    "area":"Derechos laborales, formalización y emprendimiento",
+    "activa_cuando":"clase = Informal",
+    "aplica_a":"Empleado_Informal",
+    "variable_prioridad":"",
+    "texto":"Recuerda registrar los pagos que recibas hasta el décimo día hábil del mes siguiente; si el pago es a crédito, las cuotas se pueden modificar dentro de los 10 días hábiles siguientes."
+  },
+  {
+    "id":"R29",
+    "area_id":"A5",
+    "area":"Derechos laborales, formalización y emprendimiento",
+    "activa_cuando":"clase = Informal",
+    "aplica_a":"Empleado_Informal",
+    "variable_prioridad":"",
+    "texto":"Si piensas emprender un negocio propio, el MTPE ofrece orientación gratuita para el emprendimiento (0800-16872, orientacionemprendimiento@trabajo.gob.pe), y PRODUCE ofrece el servicio 'Crea tu empresa' para formalizarlo."
+  }
+]
