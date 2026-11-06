@@ -19,7 +19,7 @@ df = df.rename(columns={
     "P512": "obtuvo_titulo",
     "P513": "homologo_titulo_peru",
     "P307": "tipo_permiso_migratorio_enpove",  # se remapea abajo
-})
+}).copy()  # .copy() desfragmenta el DataFrame (evita PerformanceWarning)
 
 # ---------------------------------------------------------------------------
 # PASO 2: Forzar a numérico las columnas que vamos a mapear/comparar
@@ -106,10 +106,6 @@ df.loc[mask_no_estudio_en_peru, "nivel_educ_peru"] = 13
 # nacionalidad: ENPOVE encuesta solo a venezolanos por diseño
 df["nacionalidad"] = 2
 
-# tiene_carrera_superior: sin pregunta equivalente exacta en ENPOVE. Proxy:
-# si P502 (carrera que estudia/estudió) tiene valor, asumimos que sí.
-# LIMITACIÓN A DOCUMENTAR: es una aproximación, no la misma pregunta original.
-df["tiene_carrera_superior"] = df["P502"].notna().astype(int)
 
 # tiempo_residencia_anios: mismo criterio que en ENAHOPV, año de referencia 2022
 ANIO_ENCUESTA_ENPOVE = 2022
@@ -121,12 +117,13 @@ df["tiempo_residencia_anios"] = ANIO_ENCUESTA_ENPOVE - pd.to_numeric(df["P303_AN
 ml_features = [
     'sexo', 'edad', 'estado_civil', 'nacionalidad',
     'nivel_educ_venezuela', 'nivel_educ_peru',
-    'obtuvo_titulo', 'homologo_titulo_peru', 'tiene_carrera_superior',
+    'obtuvo_titulo', 'homologo_titulo_peru',
     'anios_escolaridad_venezuela', 'anios_escolaridad_peru', 'brecha_educativa_anios',
     'tipo_permiso_migratorio', 'tiempo_residencia_anios',
     'condicion_laboral',
 ]
 df_enpove_ml = df[ml_features].copy()
+assert df_enpove_ml.shape[1] == 14 and 'tiene_carrera_superior' not in df_enpove_ml.columns
 df_enpove_ml['fuente'] = 'ENPOVE_2022'  # para poder filtrar/auditar después si algo sale raro
 
 print("\nDimensiones finales ENPOVE 2022 listo para concatenar:", df_enpove_ml.shape)
