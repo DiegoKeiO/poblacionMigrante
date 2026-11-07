@@ -1,8 +1,20 @@
-# Entornos virtuales y cachés
-.venv/
-**/.venv/
+# Python
 __pycache__/
 *.pyc
+.venv/
+venv/
 
-# Variables de entorno (se mantiene .env.example)
+# Entorno y secretos
 .env
+
+# Node
+node_modules/
+dist/
+
+# Datos (microdatos INEI: no se suben)
+ml/data/
+
+# IDE / SO
+.vscode/
+.idea/
+.DS_Store
