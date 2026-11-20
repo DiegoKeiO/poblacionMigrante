@@ -7,7 +7,6 @@
     "nivel_educ_peru",
     "obtuvo_titulo",
     "homologo_titulo_peru",
-    "tiene_carrera_superior",
     "tipo_permiso_migratorio"
   ],
   "num_cols": [
@@ -25,5 +24,132 @@
     "Empleado_Formal",
     "Empleado_Informal"
   ],
-  "peso_formal_etapa2": 1.4
+  "peso_formal_etapa2": 1.2,
+  "version": "v1.1",
+  "fecha": "2026-11-14",
+  "semilla": 42,
+  "imputacion_numericas": {
+    "estrategia": "mediana de train",
+    "medianas": {
+      "edad": 31.0,
+      "anios_escolaridad_venezuela": 11.0,
+      "anios_escolaridad_peru": 11.0,
+      "brecha_educativa_anios": 0.0,
+      "tiempo_residencia_anios": 4.0
+    }
+  },
+  "winsorizar": false,
+  "limites_winsor": null,
+  "poblacion_objetivo": {
+    "edad_min": 14,
+    "edad_max": 78,
+    "nota": "Filtro aplicado en la construcción del dataset (no recorte de valores)."
+  },
+  "columnas_entrada": [
+    "sexo",
+    "edad",
+    "estado_civil",
+    "nacionalidad",
+    "nivel_educ_venezuela",
+    "nivel_educ_peru",
+    "obtuvo_titulo",
+    "homologo_titulo_peru",
+    "anios_escolaridad_venezuela",
+    "anios_escolaridad_peru",
+    "brecha_educativa_anios",
+    "tipo_permiso_migratorio",
+    "tiempo_residencia_anios"
+  ],
+  "nota_preprocesamiento": "Convertir cat_cols a str antes de predecir. CatBoost usa categóricas nativas: no aplicar scaler ni one-hot.",
+  "etapa1": {
+    "archivo": "modelo_etapa1_empleo.cbm",
+    "clases": [
+      "Desempleado",
+      "Empleado"
+    ],
+    "regla": "predict() de CatBoost (clase de mayor probabilidad)",
+    "hiperparametros": {
+      "iterations": 500,
+      "learning_rate": 0.05,
+      "depth": 6,
+      "random_seed": 42,
+      "verbose": 0,
+      "cat_features": [
+        "sexo",
+        "estado_civil",
+        "nacionalidad",
+        "nivel_educ_venezuela",
+        "nivel_educ_peru",
+        "obtuvo_titulo",
+        "homologo_titulo_peru",
+        "tipo_permiso_migratorio"
+      ]
+    }
+  },
+  "etapa2": {
+    "archivo": "modelo_etapa2_formalidad.cbm",
+    "clases": [
+      "Empleado_Formal",
+      "Empleado_Informal"
+    ],
+    "regla": "argmax(proba * pesos)",
+    "peso_formal": 1.2,
+    "hiperparametros": {
+      "iterations": 500,
+      "learning_rate": 0.05,
+      "depth": 6,
+      "random_seed": 42,
+      "verbose": 0,
+      "cat_features": [
+        "sexo",
+        "estado_civil",
+        "nacionalidad",
+        "nivel_educ_venezuela",
+        "nivel_educ_peru",
+        "obtuvo_titulo",
+        "homologo_titulo_peru",
+        "tipo_permiso_migratorio"
+      ]
+    }
+  },
+  "calibracion": {
+    "etapa1": {
+      "archivo": "calibrador_etapa1.joblib",
+      "metodo": "Platt",
+      "cortes_riesgo": [
+        0.06441760533678602,
+        0.11947681537093183
+      ]
+    },
+    "etapa2": {
+      "archivo": "calibrador_etapa2.joblib",
+      "metodo": "Platt",
+      "cortes_riesgo": [
+        0.0562199534553444,
+        0.15252215942553166
+      ]
+    },
+    "niveles": [
+      "Bajo",
+      "Medio",
+      "Alto"
+    ],
+    "nota": "Calibrador ajustado en validación sobre la probabilidad cruda de CatBoost. La clase predicha NO usa la probabilidad calibrada. En la interfaz mostrar nivel de riesgo, no porcentaje."
+  },
+  "metricas_test": {
+    "macro_f1_cascada": 0.4810465181101078,
+    "ic95_bootstrap": [
+      0.45504507021414586,
+      0.5071979098736472
+    ],
+    "macro_f1_directo_mejor": 0.4888451932497137,
+    "modelo_directo_mejor": "CatBoost"
+  },
+  "versiones": {
+    "python": "3.13.18",
+    "scikit-learn": "1.6.1",
+    "catboost": "1.2.10",
+    "pandas": "2.2.3",
+    "numpy": "2.4.6"
+  }
 }
