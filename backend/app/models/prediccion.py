@@ -16,10 +16,13 @@ class Prediccion(Base):
     usuario_ejecutor_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("usuarios.id"), nullable=False, index=True)
     version_modelo_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("versiones_modelo.id"), nullable=False)
     inputs_snapshot: Mapped[dict] = mapped_column(JSONB, nullable=False)
-    clase_predicha: Mapped[str] = mapped_column(String(30), nullable=False) 
+    clase_predicha: Mapped[str] = mapped_column(String(30), nullable=False)
     prob_formal: Mapped[float] = mapped_column(Numeric(5, 4), nullable=False)
     prob_informal: Mapped[float] = mapped_column(Numeric(5, 4), nullable=False)
     prob_desempleado: Mapped[float] = mapped_column(Numeric(5, 4), nullable=False)
+    clase_etapa2: Mapped[str] = mapped_column(String(30), nullable=False)
+    nivel_riesgo_desempleo: Mapped[str] = mapped_column(String(10), nullable=False)
+    nivel_prob_formalidad: Mapped[str] = mapped_column(String(10), nullable=False)
     valores_shap: Mapped[dict] = mapped_column(JSONB, nullable=False, default=dict)
     tiempo_respuesta_ms: Mapped[int | None] = mapped_column(Integer)
     fecha_prediccion: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
@@ -27,4 +30,8 @@ class Prediccion(Base):
     perfil = relationship("PerfilMigrante", back_populates="predicciones")
     usuario_ejecutor = relationship("Usuario")
     version_modelo = relationship("VersionModelo")
-    recomendaciones = relationship("PrediccionRecomendacion", back_populates="prediccion")
+    recomendaciones = relationship(
+        "PrediccionRecomendacion",
+        back_populates="prediccion",
+        order_by="PrediccionRecomendacion.orden_prioridad",
+    )

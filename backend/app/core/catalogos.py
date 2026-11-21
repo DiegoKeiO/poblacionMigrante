@@ -158,3 +158,19 @@ def aplica_titulo(nivel_ven: str) -> bool:
 def aplica_homologacion(obtuvo_titulo: str) -> bool:
     """'homologo_titulo_peru' solo se responde si obtuvo_titulo == '1'; si no, 'No Especificado'."""
     return obtuvo_titulo == "1"
+
+NOMBRES_VARIABLES: dict[str, str] = {
+    "sexo": "Sexo",
+    "edad": "Edad",
+    "estado_civil": "Estado civil",
+    "nacionalidad": "Nacionalidad",
+    "nivel_educ_venezuela": "Nivel educativo en Venezuela",
+    "nivel_educ_peru": "Nivel educativo en el Perú",
+    "obtuvo_titulo": "Obtuvo título",
+    "homologo_titulo_peru": "Homologó el título en el Perú",
+    "anios_escolaridad_venezuela": "Años de escolaridad en Venezuela",
+    "anios_escolaridad_peru": "Años de escolaridad en el Perú",
+    "brecha_educativa_anios": "Brecha educativa (años)",
+    "tipo_permiso_migratorio": "Permiso migratorio",
+    "tiempo_residencia_anios": "Tiempo de residencia (años)",
+}
