@@ -1,0 +1,114 @@
+{
+  "etiquetas": {
+    "sexo": {
+      "1": "Hombre",
+      "2": "Mujer"
+    },
+    "estado_civil": {
+      "1": "Conviviente",
+      "2": "Casado/a",
+      "3": "Viudo/a",
+      "4": "Divorciado/a",
+      "5": "Separado/a",
+      "6": "Soltero/a"
+    },
+    "nacionalidad": {
+      "1": "Peruano/a",
+      "2": "Venezolano/a",
+      "3": "Colombiano/a",
+      "4": "Otro/a"
+    },
+    "nivel_educ_venezuela": {
+      "1": "Sin nivel",
+      "2": "Preescolar",
+      "3": "Básica incompleta",
+      "4": "Básica completa",
+      "5": "Media diversificada incompleta",
+      "6": "Media diversificada completa",
+      "7": "Técnico superior incompleta",
+      "8": "Técnico superior completa",
+      "9": "Universitaria incompleta",
+      "10": "Universitaria completa",
+      "11": "Maestría/Doctorado",
+      "99": "Sin dato"
+    },
+    "nivel_educ_peru": {
+      "1": "Sin nivel",
+      "2": "Inicial",
+      "3": "Primaria incompleta",
+      "4": "Primaria completa",
+      "5": "Secundaria incompleta",
+      "6": "Secundaria completa",
+      "7": "Superior no univ. incompleta",
+      "8": "Superior no univ. completa",
+      "9": "Superior univ. incompleta",
+      "10": "Superior univ. completa",
+      "11": "Maestría/Doctorado",
+      "12": "Básica especial",
+      "13": "No ha estudiado en el Perú",
+      "99": "Sin dato"
+    },
+    "obtuvo_titulo": {
+      "1": "Sí",
+      "2": "No",
+      "": "No aplica / sin dato"
+    },
+    "homologo_titulo_peru": {
+      "1": "Sí",
+      "2": "No",
+      "": "No aplica / sin dato"
+    },
+    "tipo_permiso_migratorio": {
+      "1": "Permiso Temporal vigente (CPP)",
+      "2": "Residencia (carné de extranjería)",
+      "3": "Visa vigente",
+      "4": "DNI",
+      "5": "Otro tipo de permiso",
+      "6": "Permiso Temporal vencido (CPP)",
+      "7": "Residencia (CE) vencida",
+      "8": "Visa vencida",
+      "9": "No cuenta con permiso migratorio"
+    }
+  },
+  "grupo_nivel_venezuela": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 0,
+    "7": 1,
+    "8": 1,
+    "9": 2,
+    "10": 2,
+    "11": 2
+  },
+  "grupo_nivel_peru": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 0,
+    "7": 1,
+    "8": 1,
+    "9": 2,
+    "10": 2,
+    "11": 2,
+    "12": 0,
+    "13": 0
+  },
+  "areas": {
+    "A1": "Regularización y documentos migratorios",
+    "A2": "Reconocimiento de estudios y títulos",
+    "A3": "Formación y certificación",
+    "A4": "Orientación y búsqueda de empleo",
+    "A5": "Derechos laborales, formalización y emprendimiento"
+  },
+  "limite_por_clase": {
+    "Empleado_Formal": 2,
+    "Empleado_Informal": 6,
+    "Desempleado": 8
+  },
+  "fecha": "2026-11-21"
+}

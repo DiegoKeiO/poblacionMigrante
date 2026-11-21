@@ -1,0 +1,259 @@
+[
+  {
+    "perfil": {
+      "sexo": "2",
+      "edad": 29.0,
+      "estado_civil": "1",
+      "nacionalidad": "2",
+      "nivel_educ_venezuela": "6.0",
+      "nivel_educ_peru": "13.0",
+      "obtuvo_titulo": "No Especificado",
+      "homologo_titulo_peru": "No Especificado",
+      "anios_escolaridad_venezuela": 11.0,
+      "anios_escolaridad_peru": 11.0,
+      "brecha_educativa_anios": 0.0,
+      "tipo_permiso_migratorio": "1",
+      "tiempo_residencia_anios": 3.0
+    },
+    "esperado": {
+      "prediccion": "Desempleado",
+      "probabilidades": {
+        "Desempleado": 0.5858,
+        "Empleado_Formal": 0.0402,
+        "Empleado_Informal": 0.374
+      },
+      "niveles": {
+        "e1": "Alto",
+        "e2": "Medio"
+      },
+      "top_variables": [
+        "tiempo_residencia_anios",
+        "sexo",
+        "edad",
+        "estado_civil",
+        "nivel_educ_venezuela"
+      ],
+      "reglas": [
+        "R4",
+        "R6",
+        "R17",
+        "R13",
+        "R23"
+      ]
+    }
+  },
+  {
+    "perfil": {
+      "sexo": "2",
+      "edad": 37.0,
+      "estado_civil": "2",
+      "nacionalidad": "2",
+      "nivel_educ_venezuela": "10.0",
+      "nivel_educ_peru": "13.0",
+      "obtuvo_titulo": "1",
+      "homologo_titulo_peru": "2",
+      "anios_escolaridad_venezuela": 16.0,
+      "anios_escolaridad_peru": 16.0,
+      "brecha_educativa_anios": 0.0,
+      "tipo_permiso_migratorio": "1",
+      "tiempo_residencia_anios": 3.0
+    },
+    "esperado": {
+      "prediccion": "Desempleado",
+      "probabilidades": {
+        "Desempleado": 0.707,
+        "Empleado_Formal": 0.0452,
+        "Empleado_Informal": 0.2478
+      },
+      "niveles": {
+        "e1": "Alto",
+        "e2": "Medio"
+      },
+      "top_variables": [
+        "tiempo_residencia_anios",
+        "sexo",
+        "estado_civil",
+        "edad",
+        "tipo_permiso_migratorio"
+      ],
+      "reglas": [
+        "R4",
+        "R12",
+        "R14",
+        "R11",
+        "R7",
+        "R6",
+        "R9",
+        "R10"
+      ]
+    }
+  },
+  {
+    "perfil": {
+      "sexo": "2",
+      "edad": 43.0,
+      "estado_civil": "6",
+      "nacionalidad": "2",
+      "nivel_educ_venezuela": "8.0",
+      "nivel_educ_peru": "13.0",
+      "obtuvo_titulo": "No Especificado",
+      "homologo_titulo_peru": "No Especificado",
+      "anios_escolaridad_venezuela": 14.0,
+      "anios_escolaridad_peru": 14.0,
+      "brecha_educativa_anios": 0.0,
+      "tipo_permiso_migratorio": "2",
+      "tiempo_residencia_anios": 3.0
+    },
+    "esperado": {
+      "prediccion": "Empleado_Formal",
+      "probabilidades": {
+        "Desempleado": 0.043,
+        "Empleado_Formal": 0.4852,
+        "Empleado_Informal": 0.4717
+      },
+      "niveles": {
+        "e1": "Bajo",
+        "e2": "Alto"
+      },
+      "top_variables": [
+        "tiempo_residencia_anios",
+        "tipo_permiso_migratorio",
+        "sexo",
+        "nivel_educ_venezuela",
+        "anios_escolaridad_venezuela"
+      ],
+      "reglas": [
+        "R3",
+        "R6"
+      ]
+    }
+  },
+  {
+    "perfil": {
+      "sexo": "2",
+      "edad": 29.0,
+      "estado_civil": "1",
+      "nacionalidad": "2",
+      "nivel_educ_venezuela": "10.0",
+      "nivel_educ_peru": "13.0",
+      "obtuvo_titulo": "1",
+      "homologo_titulo_peru": "2",
+      "anios_escolaridad_venezuela": 16.0,
+      "anios_escolaridad_peru": 16.0,
+      "brecha_educativa_anios": 0.0,
+      "tipo_permiso_migratorio": "2",
+      "tiempo_residencia_anios": 6.0
+    },
+    "esperado": {
+      "prediccion": "Empleado_Formal",
+      "probabilidades": {
+        "Desempleado": 0.2199,
+        "Empleado_Formal": 0.3951,
+        "Empleado_Informal": 0.385
+      },
+      "niveles": {
+        "e1": "Alto",
+        "e2": "Alto"
+      },
+      "top_variables": [
+        "tiempo_residencia_anios",
+        "tipo_permiso_migratorio",
+        "sexo",
+        "anios_escolaridad_venezuela",
+        "nivel_educ_venezuela"
+      ],
+      "reglas": [
+        "R3",
+        "R7"
+      ]
+    }
+  },
+  {
+    "perfil": {
+      "sexo": "2",
+      "edad": 32.0,
+      "estado_civil": "1",
+      "nacionalidad": "2",
+      "nivel_educ_venezuela": "8.0",
+      "nivel_educ_peru": "13.0",
+      "obtuvo_titulo": "No Especificado",
+      "homologo_titulo_peru": "No Especificado",
+      "anios_escolaridad_venezuela": 14.0,
+      "anios_escolaridad_peru": 14.0,
+      "brecha_educativa_anios": 0.0,
+      "tipo_permiso_migratorio": "1",
+      "tiempo_residencia_anios": 3.0
+    },
+    "esperado": {
+      "prediccion": "Empleado_Informal",
+      "probabilidades": {
+        "Desempleado": 0.4157,
+        "Empleado_Formal": 0.1093,
+        "Empleado_Informal": 0.475
+      },
+      "niveles": {
+        "e1": "Alto",
+        "e2": "Medio"
+      },
+      "top_variables": [
+        "tipo_permiso_migratorio",
+        "tiempo_residencia_anios",
+        "anios_escolaridad_venezuela",
+        "nivel_educ_venezuela",
+        "sexo"
+      ],
+      "reglas": [
+        "R4",
+        "R6",
+        "R13",
+        "R22",
+        "R24",
+        "R25"
+      ]
+    }
+  },
+  {
+    "perfil": {
+      "sexo": "1",
+      "edad": 28.0,
+      "estado_civil": "1",
+      "nacionalidad": "2",
+      "nivel_educ_venezuela": "9.0",
+      "nivel_educ_peru": "13.0",
+      "obtuvo_titulo": "No Especificado",
+      "homologo_titulo_peru": "No Especificado",
+      "anios_escolaridad_venezuela": 13.5,
+      "anios_escolaridad_peru": 13.5,
+      "brecha_educativa_anios": 0.0,
+      "tipo_permiso_migratorio": "1",
+      "tiempo_residencia_anios": 3.0
+    },
+    "esperado": {
+      "prediccion": "Empleado_Informal",
+      "probabilidades": {
+        "Desempleado": 0.1042,
+        "Empleado_Formal": 0.1227,
+        "Empleado_Informal": 0.7731
+      },
+      "niveles": {
+        "e1": "Medio",
+        "e2": "Medio"
+      },
+      "top_variables": [
+        "tipo_permiso_migratorio",
+        "tiempo_residencia_anios",
+        "anios_escolaridad_venezuela",
+        "edad",
+        "nivel_educ_venezuela"
+      ],
+      "reglas": [
+        "R4",
+        "R6",
+        "R18",
+        "R20",
+        "R13",
+        "R22"
+      ]
+    }
+  }
+]
